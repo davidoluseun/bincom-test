@@ -17,15 +17,18 @@
       the summed total result of a local government.
     </p>
 
-    <% if (query != 0) { %>
+    <% if (notFound) { %>
+    <p>Announced polling results was not found for the selected LGA.</p>
+    <% } else { %>
+
     <p>
-      Polling Units result for <% lga.forEach(l => { %> <% if (l.lga_id ===
-      query) { %>
+      Polling units summed total for <% lga.forEach(l => { %> <% if (l.lga_id
+      === query) { %>
       <span><%= l.lga_name %></span>
       <% } %> <% }); %> is: <%= sum %>
     </p>
-    <% } %>
 
+    <% } %>
     <form>
       <select name="lga">
         <% lga.forEach(l => { %>
