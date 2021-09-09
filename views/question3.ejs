@@ -13,25 +13,26 @@
     </nav>
     <h1>Question 3 Solution:</h1>
 
-    <p>Fill the fields below and click "Save" button to store the results for All parties.</p>
+    <p>Fill the form below and click "Save" button to store the results for All parties.</p>
     <form>
+      <p>Input parties score below (all fields are required):</p>
       <div>
         <label for="fullname">Your Full name:</label>
         <input
           type="text"
           name="fullname"
           id="fullname"
+          required
           placeholder="Enter your full name"
         />
       </div>
 
       <div>
-        <p>Input parties score below:</p>
         <div>
           <% parties.forEach(party => { %>
            <div style="margin-top: 8px">
             <label for="<%= party.partyname %>">Party <%= party.partyname %> </label>
-            <input type="text" name="<%= party.partyname %>" id="<%= party.partyname %>" placeholder="Enter score" />
+            <input type="text" name="<%= party.partyname %>" id="<%= party.partyname %>" required placeholder="Enter score" />
            </div>
             <% }); %>
           </select> 
