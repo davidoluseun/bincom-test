@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 2 Solution</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Question 1</a>
+      <a href="/question2">Question 2</a>
+      <a href="/question3">Question 3</a>
+    </nav>
+    <h1>Question 2 Solution:</h1>
+    <p>
+      Select local government below and click on "Get Result" button to display
+      the summed total result of a local government.
+    </p>
+
+    <% if (query != 0) { %>
+    <p>
+      Polling Units result for <% lga.forEach(l => { %> <% if (l.lga_id ===
+      query) { %>
+      <span><%= l.lga_name %></span>
+      <% } %> <% }); %> is: <%= sum %>
+    </p>
+    <% } %>
+
+    <form>
+      <select name="lga">
+        <% lga.forEach(l => { %>
+        <option value="<%= l.lga_id %>"><%= l.lga_name %></option>
+        <% }); %>
+      </select>
+      <div style="margin-top: 5px">
+        <button type="submit">Get Result</button>
+      </div>
+    </form>
+  </body>
+</html>
