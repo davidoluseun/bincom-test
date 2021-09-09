@@ -13,18 +13,29 @@
     </nav>
     <h1>Question 1 Solution:</h1>
 
+    <% if (count) { %>
+    <div>
+      <p>
+        Kindly find below, the result for polling_unit_uniqueid: <%=
+        pollingUnitUniqueID %>
+      </p>
+
+      <div>
+        <% results.forEach(result => { %>
+        <div style="margin-top: 8px">
+          <span>Party: <%= result.party_abbreviation %>,</span>
+          <span>Score: <%= result.party_score %></span>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+    <% } else { %>
+
     <p>
-      Kindly find below, the result for polling_unit_uniqueid <%=
+      No result found for the given polling_unit_uniqueid: <%=
       pollingUnitUniqueID %>
     </p>
 
-    <div>
-      <% results.forEach(result => { %>
-      <div style="margin-top: 8px">
-        <span>Party: <%= result.party_abbreviation %>,</span>
-        <span>Score: <%= result.party_score %></span>
-      </div>
-      <% }); %>
-    </div>
+    <% } %>
   </body>
 </html>
