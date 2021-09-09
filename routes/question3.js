@@ -31,8 +31,8 @@ router.get("/", (req, res) => {
     };
 
     pollingUnitResults.push(newPollingUnitResult);
+    isSubmitted = true;
   }
-  isSubmitted = true;
 
   res.render("question3", { parties, isSubmitted });
 });
