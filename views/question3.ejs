@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Question 2 Solution</title>
+    <title>Question 3 Solution</title>
   </head>
   <body>
     <nav>
@@ -12,7 +12,34 @@
       <a href="/question3">Question 3</a>
     </nav>
     <h1>Question 3 Solution:</h1>
-    
-    <p>Polling Unit result is:</p>
+
+    <p>Fill the fields below and click "Save" button to store the results for All parties.</p>
+    <form>
+      <div>
+        <label for="fullname">Your Full name:</label>
+        <input
+          type="text"
+          name="fullname"
+          id="fullname"
+          placeholder="Enter your full name"
+        />
+      </div>
+
+      <div>
+        <p>Input parties score below:</p>
+        <div>
+          <% parties.forEach(party => { %>
+           <div style="margin-top: 8px">
+            <label for="<%= party.partyname %>">Party <%= party.partyname %> </label>
+            <input type="text" name="<%= party.partyname %>" id="<%= party.partyname %>" placeholder="Enter score" />
+           </div>
+            <% }); %>
+          </select> 
+         
+        </div>
+      </div>
+
+      <button type="submit">Save</button>
+    </form>
   </body>
 </html>
