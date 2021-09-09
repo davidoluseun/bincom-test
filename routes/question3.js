@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   const pollingUnitResults = data.announced_pu_results;
   const pollingUnits = data.polling_unit;
-
+  let isSubmitted = false;
   const parties = data.party;
   const query = req.query;
   const fullname = req.query.fullname;
@@ -32,8 +32,9 @@ router.get("/", (req, res) => {
 
     pollingUnitResults.push(newPollingUnitResult);
   }
+  isSubmitted = true;
 
-  res.render("question3", { parties });
+  res.render("question3", { parties, isSubmitted });
 });
 
 module.exports = router;

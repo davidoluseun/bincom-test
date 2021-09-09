@@ -13,7 +13,13 @@
     </nav>
     <h1>Question 3 Solution:</h1>
 
-    <p>Fill the form below and click "Save" button to store the results for All parties.</p>
+    <% if (isSubmitted) { %>
+      <p>Hi, a new polling unit has been created and the results of all the parties has been stored in the new polling unit.</p>
+      <p>Thanks!</p>
+      <% } else { %>
+  
+      <div>
+        <p>Fill the form below and click "Save" button to store the results for All parties.</p>
     <form>
       <p>Input parties score below (all fields are required):</p>
       <div>
@@ -42,5 +48,10 @@
 
       <button type="submit">Save</button>
     </form>
+      </div>
+  
+      <% } %>
+
+    
   </body>
 </html>
